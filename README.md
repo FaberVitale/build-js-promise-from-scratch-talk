@@ -1,11 +1,24 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# Let's build JS promise from scratch
 
-To start the slide show:
+Slides for a talk about building a [Promise A+ spec](https://promisesaplus.com/) compliant Promise
+in Typescript.
 
-- `npm install`
-- `npm run dev`
-- visit http://localhost:3030
+The actual Promise implementation is available [here](https://github.com/FaberVitale/pinky-promise).
 
-Edit the [slides.md](./slides.md) to see the changes.
+Built with [Slidev](https://sli.dev/).
 
-Learn more about Slidev on [documentations](https://sli.dev/).
+## References
+
+### MDN
+
+- [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [Using Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
+
+### Specs
+
+- [Promise A+ spec](https://promisesaplus.com/)
+- [Ecmascript Promise](https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-promise-objects)
+
+## License
+
+[MIT](LICENSE)
