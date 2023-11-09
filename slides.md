@@ -38,7 +38,7 @@ image: /assets/maxim-shklyaev-RThOx_CsT-Q-unsplash.jpg
 <v-clicks>
 
 - Build a [Promise A+](https://promisesaplus.com/) spec compliant Promise in Typescript.
-- Learn more about Javascript Promises.
+- Learn Javascript Promises.
 - Have fun!
 
 </v-clicks>
@@ -122,7 +122,7 @@ transition: none
 ---
 layout: image-right
 image: /assets/kelly-sikkema-hqjxQ3sqTW8-unsplash.jpg
-transition: none
+transition: slide-left
 ---
 
 # So... what's a Promise?
@@ -133,10 +133,45 @@ transition: none
 
 ---
 layout: image-right
+image: /assets/julie-molliver-Z3vFp7szCAY-unsplash.jpg
+transition: none
+---
+
+# A bit of history
+
+<div class="slide-big-list">
+<v-clicks>
+
+- Based on paper written in the [1976](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.295.9692) by Daniel P. Friedman, David, S. Wise.
+- Popularized in Javascript by [JQuery](https://api.jquery.com/category/deferred-object/) in [2011](https://blog.jquery.com/2011/01/31/jquery-15-released/).
+- A Promise implementation, called [Promises](https://github.com/nodejs/node/commit/7cd09874), is committed in 2009 in Node by Ryan Dahl.
+
+</v-clicks>
+</div>
+
+---
+layout: image-right
+image: /assets/julie-molliver-Z3vFp7szCAY-unsplash.jpg
+transition: slide-left
+---
+
+# A bit of history
+
+<div class="slide-big-list">
+<v-clicks>
+
+- A specification, [Promise A+](https://promisesaplus.com/) written by [Domenic Denicola](https://github.com/domenic) was created in 2012.
+- Standardized in ECMAScript20215 (ES6) in 2015.
+
+</v-clicks>
+</div>
+
+---
+layout: image-right
 image: /assets/kelly-sikkema-hqjxQ3sqTW8-unsplash.jpg
 ---
 
-# So... what's a Promise?
+# Promise state
 
 <div class="my-12 text-2xl"> 
 A Promise is in one of these states:
@@ -154,7 +189,7 @@ A Promise is in one of these states:
 
 ---
 
-# Promise states
+# Promise state
 
 <div class="flex justify-center">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 770.9943594734391 390" width="770.9943594734391" height="390" filter="invert(93%) hue-rotate(180deg)">
