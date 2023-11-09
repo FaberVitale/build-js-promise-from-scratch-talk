@@ -6,6 +6,7 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
+    "preview": "serve -s dist",
     "export": "slidev export"
   },
   "dependencies": {

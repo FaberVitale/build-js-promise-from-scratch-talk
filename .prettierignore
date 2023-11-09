@@ -1,0 +1,5 @@
+public/assets/**
+pnpm-lock.yaml
+slides.md
+dist/
+node_modules/

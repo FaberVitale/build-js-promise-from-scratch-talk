@@ -1,3 +1,25 @@
-.slidev-layout h1 {
+.slidev-layout :is(h1, h2) {
   text-shadow: 3px 3px #000;
+}
+
+.slidev-layout .space-next-button {
+  text-shadow: 2px 1px #000;
+}
+
+.code-block-1 {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.code-block-1 > * {
+  flex: 1 1 auto;
+}
+
+.code-block-1 code {
+  font-size: 1.4rem;
+}
+
+.slide-big-list li {
+  font-size: 1.6rem !important;
 }
