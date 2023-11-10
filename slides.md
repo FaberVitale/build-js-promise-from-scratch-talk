@@ -66,6 +66,12 @@ export class PinkyPromise<T> {
 
 </div>
 
+<div class="absolute top-8 right-14">
+
+[source <uim-github/> ](https://github.com/FaberVitale/pinky-promise)
+
+</div>
+
 ---
 
 # To
@@ -98,6 +104,12 @@ export class PinkyPromise<T> implements PromiseLike<T> {
   // Continue...
 }
 ```
+
+<div class="absolute top-8 right-14">
+
+[source <uim-github/> ](https://github.com/FaberVitale/pinky-promise)
+
+</div>
 
 ---
 layout: center
@@ -284,14 +296,14 @@ image: /assets/julie-molliver-Z3vFp7szCAY-unsplash.jpg
 transition: fade
 ---
 
-# JS Promise constructor spec
+# JS Promise constructor
 
 <v-clicks>
 
 - Throws error if it's invoked without `new`.
 - Throws error if input executor is not a function.
-- Synchronously calls the input executor with `resolve` and `reject`.
-- Rejects the promise if input executor raises an error.
+- Synchronously calls the input with `resolve` and `reject`.
+- Rejects the promise if executor raises an error.
 
 </v-clicks>
 
@@ -340,3 +352,49 @@ transition: slide-left
 ---
 
 # Notify Promise resolution
+
+---
+layout: image-right
+image: /assets/maxim-shklyaev-RThOx_CsT-Q-unsplash.jpg
+transition: fade
+---
+
+# .then() method
+
+
+<v-clicks>
+
+- Notifies when a Promise settles either `onFulfill(value)` or `onRejection(reason)` once.
+- Returns the unwrapped output of the invoked promise.
+- The callbacks are invoked asynchronously even if the Promise is already settled.
+
+</v-clicks>
+
+
+---
+transition: fade
+---
+
+# .then() method
+
+<div class="flex justify-center">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 794.2747856604276 660.5" width="1588.5495713208552" height="751" filter="invert(93%) hue-rotate(180deg)">
+  <!-- svg-source:excalidraw -->
+  
+  <defs>
+    <style class="style-fonts">
+      @font-face {
+        font-family: "Virgil";
+        src: url("https://excalidraw.com/Virgil.woff2");
+      }
+      @font-face {
+        font-family: "Cascadia";
+        src: url("https://excalidraw.com/Cascadia.woff2");
+      }
+    </style>
+    
+  </defs>
+  <rect x="0" y="0" width="794.2747856604276" height="375.5" fill="#ffffff"/><g stroke-linecap="round" transform="translate(10.11881576843956 181.5) rotate(0 73.5 36)"><path d="M18 0 C49.63 1.24, 81.12 0.07, 129 0 M18 0 C59.87 -1.84, 103.39 -0.39, 129 0 M129 0 C141.34 -0.32, 148.52 5.91, 147 18 M129 0 C142.62 -1.94, 145.19 5.35, 147 18 M147 18 C145.54 33.68, 147.35 47.07, 147 54 M147 18 C147.58 30.01, 147.4 40.79, 147 54 M147 54 C145.07 67.92, 142.38 73.62, 129 72 M147 54 C146.66 65.17, 141.93 71.45, 129 72 M129 72 C101.6 70.6, 72.07 73.25, 18 72 M129 72 C105.5 72.12, 82.58 70.6, 18 72 M18 72 C4.9 72.36, -0.39 64.22, 0 54 M18 72 C7.81 73.93, -0.77 66.07, 0 54 M0 54 C-0.3 48.27, 1.38 37.8, 0 18 M0 54 C0.07 47.24, -0.29 39.15, 0 18 M0 18 C1.2 5.71, 5.72 -0.8, 18 0 M0 18 C-1.36 4.46, 7.34 0.84, 18 0" stroke="#1e1e1e" stroke-width="2" fill="none"/></g><g transform="translate(36.11881576843956 202.5) rotate(0 50.20000076293945 17.5)"><text x="0" y="0" font-family="Virgil, Segoe UI Emoji" font-size="28px" fill="#1e1e1e" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">Promise</text></g><g mask="url(#mask-Vx9rt5D3Q9rYhKxmffdow)" stroke-linecap="round"><g transform="translate(160.11881576843956 214.89905611180131) rotate(0 77.02220231874844 -27.995987935350627)"><path d="M0.11 -0.52 C9.31 -6.27, 30.44 -24.34, 55.92 -33.89 C81.4 -43.44, 136.63 -54.01, 152.98 -57.82 M-1.3 1.83 C7.77 -3.82, 29.34 -22.84, 55.45 -32.61 C81.56 -42.38, 138.87 -52.37, 155.34 -56.77" stroke="#1e1e1e" stroke-width="2" fill="none"/></g><g transform="translate(160.11881576843956 214.89905611180131) rotate(0 77.02220231874844 -27.995987935350627)"><path d="M130.05 -40.64 C138.16 -44.92, 147.27 -53.91, 155.34 -56.77 M130.05 -40.64 C136.99 -44.84, 143.17 -49.35, 155.34 -56.77" stroke="#1e1e1e" stroke-width="2" fill="none"/></g><g transform="translate(160.11881576843956 214.89905611180131) rotate(0 77.02220231874844 -27.995987935350627)"><path d="M125.6 -60.67 C135.41 -57.78, 146.1 -59.6, 155.34 -56.77 M125.6 -60.67 C133.68 -59.74, 141.01 -59.1, 155.34 -56.77" stroke="#1e1e1e" stroke-width="2" fill="none"/></g></g><mask id="mask-Vx9rt5D3Q9rYhKxmffdow"><rect x="0" y="0" fill="#fff" width="414.11881576843956" height="372.20064252799807"/><rect x="187.86156537308602" y="171.5" fill="#000" width="54.53333282470703" height="20" opacity="1"/></mask><g transform="translate(187.86156537308614 171.5) rotate(0 49.27945271410192 15.403068176450688)"><text x="27.266666412353516" y="0" font-family="Virgil, Segoe UI Emoji" font-size="16px" fill="#1e1e1e" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">resolve</text></g><g mask="url(#mask-ctUEOEm9Hj43unAbQevEL)" stroke-linecap="round"><g transform="translate(158.11881576843956 216.88413960680361) rotate(0 74.84159647175576 29.145436807999545)"><path d="M0.85 1.1 C10.59 5.63, 33.45 18.25, 58.29 27.52 C83.12 36.78, 134.69 51.79, 149.85 56.69 M-0.16 0.64 C9.98 5.25, 35.76 18.98, 60.63 28.48 C85.49 37.98, 134.26 52.76, 149 57.65" stroke="#1e1e1e" stroke-width="2" fill="none"/></g><g transform="translate(158.11881576843956 216.88413960680361) rotate(0 74.84159647175576 29.145436807999545)"><path d="M119.02 58.86 C129.51 57.11, 134.5 57.7, 149 57.65 M119.02 58.86 C125.58 59.2, 133.57 58.67, 149 57.65" stroke="#1e1e1e" stroke-width="2" fill="none"/></g><g transform="translate(158.11881576843956 216.88413960680361) rotate(0 74.84159647175576 29.145436807999545)"><path d="M125.26 39.31 C134 43.25, 137.19 49.48, 149 57.65 M125.26 39.31 C130.17 44.4, 136.64 48.64, 149 57.65" stroke="#1e1e1e" stroke-width="2" fill="none"/></g></g><mask id="mask-ctUEOEm9Hj43unAbQevEL"><rect x="0" y="0" fill="#fff" width="408.11881576843956" height="374.2435268722626"/><rect x="193.7688153869699" y="235.5" fill="#000" width="46.70000076293945" height="20" opacity="1"/></mask><g transform="translate(193.7688153869699 235.5) rotate(0 39.19159685322549 10.52957641480316)"><text x="23.350000381469727" y="0" font-family="Virgil, Segoe UI Emoji" font-size="16px" fill="#1e1e1e" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">reject</text></g><g stroke-linecap="round" transform="translate(315.11881576843956 123.5) rotate(0 82 34)"><path d="M17 0 C49.9 -0.14, 80.6 -1.64, 147 0 M17 0 C53.67 -1.34, 90.84 -0.33, 147 0 M147 0 C158.81 1.82, 162.9 6.01, 164 17 M147 0 C160.29 -1.41, 162.78 6.37, 164 17 M164 17 C165.45 27.16, 164.87 34.85, 164 51 M164 17 C164.82 28, 164.87 36.96, 164 51 M164 51 C165.52 60.81, 157.81 67.63, 147 68 M164 51 C163.02 64.21, 156.71 67.32, 147 68 M147 68 C118.18 68.45, 89.05 65.36, 17 68 M147 68 C104.3 69.64, 59.73 68.65, 17 68 M17 68 C5.19 69.92, 0.12 60.94, 0 51 M17 68 C4.06 65.76, -1.85 61.47, 0 51 M0 51 C-1.69 37.15, -1.31 23.78, 0 17 M0 51 C0.01 38.54, -0.98 28, 0 17 M0 17 C-0.7 4.76, 6.09 1.37, 17 0 M0 17 C1.78 5.87, 6.65 -0.93, 17 0" stroke="#1e1e1e" stroke-width="2" fill="none"/></g><g transform="translate(343.068816531379 147.5) rotate(0 54.04999923706055 10)"><text x="54.04999923706055" y="0" font-family="Virgil, Segoe UI Emoji" font-size="16px" fill="#1e1e1e" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">.then(onFulfill)</text></g><g stroke-linecap="round" transform="translate(309.11881576843956 236.5) rotate(0 88 43.5)"><path d="M21.75 0 C52.01 0.06, 85.42 1.93, 154.25 0 M21.75 0 C50.37 -0.29, 79.51 0.34, 154.25 0 M154.25 0 C167.56 -1.09, 176.5 6.4, 176 21.75 M154.25 0 C168.61 2.24, 176.33 5.63, 176 21.75 M176 21.75 C174.72 31.2, 174.16 39.67, 176 65.25 M176 21.75 C175.07 31.82, 176.53 40.3, 176 65.25 M176 65.25 C176.69 78.76, 170.15 85.47, 154.25 87 M176 65.25 C177.6 78.43, 168.33 88.44, 154.25 87 M154.25 87 C108.86 84.09, 68.63 84.35, 21.75 87 M154.25 87 C116.39 85.74, 76.64 86.26, 21.75 87 M21.75 87 C5.63 85.67, -0.54 80.31, 0 65.25 M21.75 87 C7.41 87.96, 0.42 78.63, 0 65.25 M0 65.25 C-1.88 48.86, -1.61 31.98, 0 21.75 M0 65.25 C0.4 55.61, -0.26 47.39, 0 21.75 M0 21.75 C-1.41 6.33, 6.07 -0.85, 21.75 0 M0 21.75 C0.89 8.44, 5.85 -0.74, 21.75 0" stroke="#1e1e1e" stroke-width="2" fill="none"/></g><g transform="translate(320.2521470672677 250) rotate(0 76.86666870117188 30)"><text x="76.86666870117188" y="0" font-family="Virgil, Segoe UI Emoji" font-size="16px" fill="#1e1e1e" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">.then(...,onRejection)</text><text x="76.86666870117188" y="20" font-family="Virgil, Segoe UI Emoji" font-size="16px" fill="#1e1e1e" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge"/><text x="76.86666870117188" y="40" font-family="Virgil, Segoe UI Emoji" font-size="16px" fill="#1e1e1e" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">.catch(onRejection)</text></g><g stroke-linecap="round"><g transform="translate(10.11881576843956 52.5) rotate(0 387.01857706177424 2.464118137342865)"><path d="M-0.12 -0.16 C128.89 0.7, 645.12 4.21, 774.16 5.08 M0.11 0.11 C129.1 0.93, 645.13 4.07, 774.11 4.85" stroke="#1e1e1e" stroke-width="2" fill="none"/></g></g><mask/><g transform="translate(27.11881576843956 10) rotate(0 48.016666412353516 17.5)"><text x="0" y="0" font-family="Virgil, Segoe UI Emoji" font-size="28px" fill="#1e1e1e" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">Pending</text></g><g transform="translate(337.11881576843956 11.5) rotate(0 51.29999923706055 17.5)"><text x="0" y="0" font-family="Virgil, Segoe UI Emoji" font-size="28px" fill="#1e1e1e" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">Settled</text></g><g mask="url(#mask-Kedv754zntr6KoJc4_adV)" stroke-linecap="round"><g transform="translate(485.11881576843956 156.5) rotate(0 69.0067109951508 21.72678026133292)"><path d="M0.06 -0.28 C10.87 1.87, 42.01 5.38, 64.94 12.64 C87.87 19.9, 125.4 38.15, 137.63 43.28 M-0.39 0.44 C10.36 2.65, 41.46 5.75, 64.6 12.97 C87.73 20.18, 126.08 38.78, 138.4 43.73" stroke="#1e1e1e" stroke-width="2" fill="none"/></g><g transform="translate(485.11881576843956 156.5) rotate(0 69.0067109951508 21.72678026133292)"><path d="M108.47 41.8 C117.52 42.29, 126.96 42.34, 138.4 43.73 M108.47 41.8 C117.43 42.46, 127.1 43.03, 138.4 43.73" stroke="#1e1e1e" stroke-width="2" fill="none"/></g><g transform="translate(485.11881576843956 156.5) rotate(0 69.0067109951508 21.72678026133292)"><path d="M116.72 23.01 C123.09 29.52, 129.89 35.58, 138.4 43.73 M116.72 23.01 C123.2 29.46, 130.33 35.81, 138.4 43.73" stroke="#1e1e1e" stroke-width="2" fill="none"/></g></g><mask id="mask-Kedv754zntr6KoJc4_adV"><rect x="0" y="0" fill="#fff" width="723.1188157684398" height="299.7518812895303"/><rect x="526.0688165313791" y="159.5" fill="#000" width="48.099998474121094" height="20" opacity="1"/></mask><g transform="translate(526.0688165313791 159.5) rotate(0 28.056710232211344 18.72678026133292)"><text x="24.049999237060547" y="0" font-family="Virgil, Segoe UI Emoji" font-size="16px" fill="#1e1e1e" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">return</text></g><g mask="url(#mask-3B6oDABX7KIOi1yC2dwyv)" stroke-linecap="round"><g transform="translate(486.11881576843956 282.0326902465166) rotate(0 68.4630162274791 -39.16269454306658)"><path d="M0.51 0.54 C11.75 -4.65, 44.46 -17.2, 67.31 -30.11 C90.17 -43.03, 125.93 -68.81, 137.61 -76.93 M-0.69 -0.23 C10.96 -4.74, 46.78 -15.78, 69.67 -28.88 C92.55 -41.99, 125.37 -70.62, 136.65 -78.86" stroke="#1e1e1e" stroke-width="2" fill="none"/></g><g transform="translate(486.11881576843956 282.0326902465166) rotate(0 68.4630162274791 -39.16269454306658)"><path d="M120.9 -53.33 C126.13 -61.92, 128.82 -68.8, 136.65 -78.86 M120.9 -53.33 C127.73 -63.16, 132.57 -71.48, 136.65 -78.86" stroke="#1e1e1e" stroke-width="2" fill="none"/></g><g transform="translate(486.11881576843956 282.0326902465166) rotate(0 68.4630162274791 -39.16269454306658)"><path d="M108.17 -69.42 C117.22 -73.42, 123.58 -75.64, 136.65 -78.86 M108.17 -69.42 C119.56 -73.26, 129.05 -75.7, 136.65 -78.86" stroke="#1e1e1e" stroke-width="2" fill="none"/></g></g><mask id="mask-3B6oDABX7KIOi1yC2dwyv"><rect x="0" y="0" fill="#fff" width="724.1188157684396" height="459.7413417385016"/><rect x="530.0688165313791" y="242.5" fill="#000" width="48.099998474121094" height="20" opacity="1"/></mask><g transform="translate(530.0688165313791 242.5) rotate(0 24.51301546453965 0.3699957034500301)"><text x="24.049999237060547" y="0" font-family="Virgil, Segoe UI Emoji" font-size="16px" fill="#1e1e1e" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">return</text></g><g stroke-linecap="round" transform="translate(626.6188157684396 168.5) rotate(0 73.5 36)"><path d="M18 0 C47.85 -2.64, 80.12 -2.58, 129 0 M18 0 C40.05 -0.99, 63.17 -0.53, 129 0 M129 0 C140.39 1.75, 148.09 5.66, 147 18 M129 0 C141.07 -0.51, 147.54 6.34, 147 18 M147 18 C147.71 30.79, 146.62 39.14, 147 54 M147 18 C146.44 26.02, 147.31 36.03, 147 54 M147 54 C145.92 67.44, 142.95 72.48, 129 72 M147 54 C147.86 64.02, 142.06 71.79, 129 72 M129 72 C96.06 71.3, 66.17 71.65, 18 72 M129 72 C88.89 72.92, 47.72 71.57, 18 72 M18 72 C4.88 71.19, -0.67 67.12, 0 54 M18 72 C7.18 72.91, -0.42 64.46, 0 54 M0 54 C0.81 41.73, 1.16 29.23, 0 18 M0 54 C0.15 41.37, -1.11 31.26, 0 18 M0 18 C-0.72 4.54, 6.4 1.02, 18 0 M0 18 C-2.2 7.77, 4.53 1.66, 18 0" stroke="#1e1e1e" stroke-width="2" fill="none"/></g><g transform="translate(649.9188150055002 187) rotate(0 50.20000076293945 17.5)"><text x="50.20000076293945" y="0" font-family="Virgil, Segoe UI Emoji" font-size="28px" fill="#1e1e1e" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">Promise</text></g><g transform="translate(643.1021493560861 11) rotate(0 48.016666412353516 17.5)"><text x="0" y="0" font-family="Virgil, Segoe UI Emoji" font-size="28px" fill="#1e1e1e" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">Pending</text></g><g transform="translate(330.11881576843956 88.5) rotate(0 69.05000305175781 13.5)"><text x="0" y="0" font-family="Virgil, Segoe UI Emoji" font-size="21.600000000000005px" fill="#1e1e1e" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">handle result</text></g><g transform="translate(334.11881576843956 340.5) rotate(0 58.95000076293945 12.5)"><text x="0" y="0" font-family="Virgil, Segoe UI Emoji" font-size="20px" fill="#1e1e1e" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">handle error</text></g></svg>
+  </div>
+
+---
