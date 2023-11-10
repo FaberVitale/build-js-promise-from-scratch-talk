@@ -4,6 +4,7 @@ background: /assets/barn-images-t5YUoHW6zRo.jpg
 class: text-center
 highlighter: shiki
 lineNumbers: false
+colorSchema: dark
 drawings:
   persist: false
 transition: slide-left
