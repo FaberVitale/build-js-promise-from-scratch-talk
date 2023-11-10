@@ -137,7 +137,7 @@ image: /assets/julie-molliver-Z3vFp7szCAY-unsplash.jpg
 transition: none
 ---
 
-# A bit of history
+# A bit of history / 1
 
 <div class="slide-big-list">
 <v-clicks>
@@ -155,7 +155,7 @@ image: /assets/julie-molliver-Z3vFp7szCAY-unsplash.jpg
 transition: slide-left
 ---
 
-# A bit of history
+# A bit of history / 2
 
 <div class="slide-big-list">
 <v-clicks>
@@ -165,6 +165,13 @@ transition: slide-left
 
 </v-clicks>
 </div>
+
+---
+layout: center
+---
+
+# Promise state
+
 
 ---
 layout: image-right
@@ -184,6 +191,12 @@ A Promise is in one of these states:
 - <div class="p-0 mx-0 mb-2"><strong class="text-3xl">❌ rejected </strong>: the operation failed.</div>
 
 </v-clicks>
+
+</div>
+
+<div class="absolute bottom-8 left-12">
+
+[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise#description)
 
 </div>
 
@@ -257,3 +270,73 @@ export class PinkyPromise<T> {
   }
 }
 ```
+
+---
+layout: center
+transition: fade
+---
+
+# Create a Promise
+
+---
+layout: image-right
+image: /assets/julie-molliver-Z3vFp7szCAY-unsplash.jpg
+transition: fade
+---
+
+# JS Promise constructor spec
+
+<v-clicks>
+
+- Throws error if it's invoked without `new`.
+- Throws error if input executor is not a function.
+- Synchronously calls the input executor with `resolve` and `reject`.
+- Rejects the promise if input executor raises an error.
+
+</v-clicks>
+
+<div class="absolute bottom-8 left-12">
+
+[Spec](https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-promise-objects) - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise)
+
+</div>
+
+---
+transition: slide-left
+---
+
+# JS Promise constructor implementation
+
+```ts {all|1|5-7|9-23}
+export class PinkyPromise<T> {
+  #state: PromiseState<T> = { status: "pending" };
+
+  constructor(executor: PinkyPromiseExecutor<T>) {
+    if (typeof executor !== "function") {
+      throw new TypeError(`${executor} is not a function`);
+    }
+
+    try {
+      executor(this.#resolve, this.#reject);
+    } catch (executorError) {
+      this.#reject(executorError);
+    }
+  }
+
+  #transition(pinkyPromise: PinkyPromise<any>, state: PromiseState<any>) { /* implementation */ }
+
+  #resolve = (value: T | PromiseLike<T>): void => {
+    PinkyPromise.#transition(this, { status: "fulfilled", value });
+  };
+  #reject = (reason: unknown): void => {
+    PinkyPromise.#transition(this, { status: "rejected", reason });
+  };
+}
+```
+
+---
+layout: center
+transition: slide-left
+---
+
+# Notify Promise resolution
