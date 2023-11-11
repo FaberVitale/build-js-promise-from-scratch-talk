@@ -159,7 +159,6 @@ transition: none
 
 - Based on paper written in the [1976](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.295.9692) by Daniel P. Friedman, David, S. Wise.
 - Popularized in Javascript by [JQuery](https://api.jquery.com/category/deferred-object/) in [2011](https://blog.jquery.com/2011/01/31/jquery-15-released/).
-- A Promise implementation, called [Promises](https://github.com/nodejs/node/commit/7cd09874), is committed in 2009 in Node by Ryan Dahl.
 
 </v-clicks>
 </div>
@@ -176,7 +175,7 @@ transition: slide-left
 <v-clicks>
 
 - A specification, [Promise A+](https://promisesaplus.com/) written by [Domenic Denicola](https://github.com/domenic) was created in 2012.
-- Standardized in ECMAScript20215 (ES6) in 2015.
+- Standardized in ECMAScript2015 (ES6) in 2015.
 
 </v-clicks>
 </div>
@@ -303,8 +302,8 @@ transition: fade
 
 <v-clicks>
 
-- Throws error if it's invoked without `new`.
-- Throws error if input executor is not a function.
+- Synchronously throws error if it's invoked without `new`.
+- Synchronously throws error if input executor is not a function.
 - Synchronously calls the input with `resolve` and `reject`.
 - Rejects the promise if executor raises an error.
 
@@ -369,7 +368,6 @@ transition: fade
 
 - Notifies when a Promise settles either `onFulfill(value)` or `onRejection(reason)` once.
 - Returns the unwrapped output of the invoked promise in a new Promise.
-- The callbacks are always invoked asynchronously in a microtask.
 
 </v-clicks>
 
@@ -460,7 +458,7 @@ export class PinkyPromise<T> implements PromiseLike<T> {
 ```
 
 ---
-transition: fade
+transition: slide-left
 ---
 
 # .then() method implementation / 2
@@ -494,7 +492,138 @@ export class PinkyPromise<T> implements PromiseLike<T> {
 ```
 
 ---
+layout: center
+transition: slide-left
+---
+
+# Unwrapping Promises
+
+---
+layout: two-cols
+transition: slide-left
+---
+
+<header class="py-12">
+  <h1 class="!text-3xl fixed top-10 left-13">Quiz: What's logged in console?</h1>
+</header>
+
+<div class="slidev-quiz">
+
+## Q-1
+
+```ts {all|0}
+Promise.resolve(
+  new Promise(resolve => Promise.resolve(5))
+).then(console.log)
+```
+
+## Q-2
+
+```ts {all|0} {at:1}
+Promise.resolve(
+  new Promise((_ ,reject) => reject(10))
+ ).then(
+    a => Promise.resolve(a + 10), 
+    a => Promise.resolve(a + 2)
+  )
+  .then(console.log)
+```
+
+</div>
+
+::right::
+
+<div class="pt-14 mt-10 slidev-quiz">
+<div v-click="1">
+
+## A-1
+
+```ts
+Promise.resolve(
+  new Promise(resolve => Promise.resolve(5))
+).then(console.log)  // Logs 5
+```
+
+</div>
+
+<div v-click="2">
+
+## A-2
+
+```ts
+Promise.resolve(
+  new Promise((_ ,reject) => reject(10))
+ ).then(
+    a => Promise.resolve(a + 10), 
+    a => Promise.resolve(a + 2)
+  )
+  .then(console.log) // Logs 12
+```
+
+</div>
+</div>
+
+---
+layout: image-right
+image: /assets/julie-molliver-Z3vFp7szCAY-unsplash.jpg
+transition: fade
+---
+
+# Promise resolution procedure / 1
+
+<div>
+
+The output of `.then()` callbacks and the argument passed to `resolve` and `reject` is always **unwrapped**,<br /> i.e not a Promise.
+
+The algorithm has to conform to the <br /> [Promise A+ Promise resolution procedure](https://promisesaplus.com/#the-promise-resolution-procedure). 
+
+[<uim-github /> PinkyPromise implementation](https://github.com/FaberVitale/pinky-promise/blob/ad5f57b84a7ac7ac0d4b751554fbd38387e7e2e9/lib/pinky-promise.ts#L130).
+
+</div>
+
+<div class="absolute bottom-8 left-12">
+
+[Promise A+ spec](https://promisesaplus.com/#the-promise-resolution-procedure)
+
+</div>
+
+---
+layout: center
+---
+
+# Putting all the pieces together
+
+---
+
+## Test suite
+
+Our Implementation passes all tests of the [Promise A+ Compliance test suite](https://github.com/promises-aplus/promises-tests) 🚀.
+
+```bash
+pnpm test:a-plus
+# Several skipped lines
+# [...]
+    The value is `true` with `Boolean.prototype` modified to have a `then` method
+      ✓ already-fulfilled
+      ✓ immediately-fulfilled
+      ✓ eventually-fulfilled
+      ✓ already-rejected
+      ✓ immediately-rejected
+      ✓ eventually-rejected
+    The value is `1` with `Number.prototype` modified to have a `then` method
+      ✓ already-fulfilled
+      ✓ immediately-fulfilled
+      ✓ eventually-fulfilled
+      ✓ already-rejected
+      ✓ immediately-rejected
+      ✓ eventually-rejected
+
+  872 passing (13s)
+```
+
+---
 layout: fact
+transition: slide-left
 ---
 
 <strong class="text-xl">
@@ -503,6 +632,7 @@ The full Promise A+ implementation is available at <br />
 [<uim-github /> https://github.com/FaberVitale/pinky-promise/blob/main/lib/pinky-promise.ts](https://github.com/FaberVitale/pinky-promise/blob/main/lib/pinky-promise.ts)
 
 </strong>
+
 ---
 layout: two-cols
 ---
@@ -513,16 +643,16 @@ layout: two-cols
 ## Slides
 
 - [<uim-link-h /> website](https://build-js-promise.netlify.app/)
-- [<uim-github /> source ](https://github.com/FaberVitale/build-js-promise-from-scratch-talk)
+- [<uim-github /> source](https://github.com/FaberVitale/build-js-promise-from-scratch-talk)
 
 ## Full Promise implementation
 
-- [<uim-github /> source ](https://github.com/FaberVitale/pinky-promise)
+- [<uim-github /> source](https://github.com/FaberVitale/pinky-promise)
 
 ## Promise A+
 
 - [<uim-link-h /> website](https://promisesaplus.com/)
-- [<uim-github /> Compliance tests ](https://github.com/promises-aplus/promises-tests)
+- [<uim-github /> Compliance tests](https://github.com/promises-aplus/promises-tests)
 
 ::right::
 

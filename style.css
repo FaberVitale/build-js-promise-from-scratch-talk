@@ -24,3 +24,7 @@
   margin-bottom: 1rem;
   font-size: 1.6rem !important;
 }
+
+.slidev-quiz pre code {
+  font-size: 1.2em;
+}
