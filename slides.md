@@ -22,6 +22,8 @@ mdc: true
 
 <h2 class="drop-shadow-2xl absolute bottom-4 right-4">Speaker: Fabrizio A. Vitale</h2>
 
+<img width="120" class="absolute bottom-4 left-4" src="/assets/slides-qrcode.svg" aria-hidden="true" alt="slides https://build-js-promise.netlify.app"/>
+
 ---
 layout: image-right
 image: /assets/maxim-shklyaev-RThOx_CsT-Q-unsplash.jpg
