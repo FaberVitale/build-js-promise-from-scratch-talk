@@ -71,7 +71,7 @@ export class PinkyPromise<T> {
 
 <div class="absolute top-8 right-14">
 
-[source <uim-github/> ](https://github.com/FaberVitale/pinky-promise)
+[<uim-github/> source](https://github.com/FaberVitale/pinky-promise)
 
 </div>
 
@@ -110,7 +110,7 @@ export class PinkyPromise<T> implements PromiseLike<T> {
 
 <div class="absolute top-8 right-14">
 
-[source <uim-github/> ](https://github.com/FaberVitale/pinky-promise)
+[<uim-github/> source ](https://github.com/FaberVitale/pinky-promise)
 
 </div>
 
@@ -492,3 +492,38 @@ export class PinkyPromise<T> implements PromiseLike<T> {
   }
 }
 ```
+
+---
+layout: fact
+---
+
+<strong class="text-xl">
+The full Promise A+ implementation is available at <br /> 
+
+[<uim-github /> https://github.com/FaberVitale/pinky-promise/blob/main/lib/pinky-promise.ts](https://github.com/FaberVitale/pinky-promise/blob/main/lib/pinky-promise.ts)
+
+</strong>
+---
+layout: two-cols
+---
+
+
+<h1 class="!text-5xl">Thank you!</h1>
+
+## Slides
+
+- [<uim-link-h /> website](https://build-js-promise.netlify.app/)
+- [<uim-github /> source ](https://github.com/FaberVitale/build-js-promise-from-scratch-talk)
+
+## Full Promise implementation
+
+- [<uim-github /> source ](https://github.com/FaberVitale/pinky-promise)
+
+## Promise A+
+
+- [<uim-link-h /> website](https://promisesaplus.com/)
+- [<uim-github /> Compliance tests ](https://github.com/promises-aplus/promises-tests)
+
+::right::
+
+<img width="280" class="absolute top-10 right-4" src="/assets/slides-qrcode.svg" aria-hidden="true" alt="slides https://build-js-promise.netlify.app"/>
