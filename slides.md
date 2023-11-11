@@ -183,7 +183,7 @@ transition: slide-left
 layout: center
 ---
 
-# Promise state
+# Promise states
 
 
 ---
@@ -191,7 +191,7 @@ layout: image-right
 image: /assets/kelly-sikkema-hqjxQ3sqTW8-unsplash.jpg
 ---
 
-# Promise state
+# Promise states
 
 <div class="my-12 text-2xl"> 
 A Promise is in one of these states:
@@ -215,7 +215,7 @@ A Promise is in one of these states:
 
 ---
 
-# Promise state
+# Promise states
 
 <div class="flex justify-center">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 770.9943594734391 390" width="770.9943594734391" height="390" filter="invert(93%) hue-rotate(180deg)">
@@ -242,7 +242,7 @@ A Promise is in one of these states:
 transition: fade
 ---
 
-# Promise state implementation / 1
+# Promise states implementation / 1
 
 ```ts
 /**
@@ -264,7 +264,7 @@ export class PinkyPromise<T> {
 
 ---
 
-# Promise state implementation / 2
+# Promise states implementation / 2
 
 ```ts
 export class PinkyPromise<T> {
