@@ -3,7 +3,7 @@ theme: default
 background: /assets/barn-images-t5YUoHW6zRo.jpg
 class: text-center
 highlighter: shiki
-lineNumbers: false
+lineNumbers: true
 colorSchema: dark
 drawings:
   persist: false
@@ -366,8 +366,8 @@ transition: fade
 <v-clicks>
 
 - Notifies when a Promise settles either `onFulfill(value)` or `onRejection(reason)` once.
-- Returns the unwrapped output of the invoked promise.
-- The callbacks are invoked asynchronously even if the Promise is already settled.
+- Returns the unwrapped output of the invoked promise in a new Promise.
+- The callbacks are always invoked asynchronously in a microtask.
 
 </v-clicks>
 
@@ -399,3 +399,94 @@ transition: fade
   </div>
 
 ---
+transition: fade
+---
+
+# Chaining Promises
+
+```ts {all|1-6|8-13}
+new Promise(resolve => resolve(5))
+  .then(a => a + 5)
+  .then(a => a + 6)
+  .then(console.log)
+
+// Logs 16
+
+new Promise((_, reject) => reject(5))
+  .then(a => a + 5)
+  .then(a => a + 6)
+  .catch(console.log)
+
+// Logs 5
+```
+
+[`then(onFulfill, onRejection)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) 
+
+returns a new Promise that contains the output of computation of either `onFulfill` or `onRejection`.
+
+---
+transition: fade
+---
+
+
+# .then() method implementation / 1
+ 
+```ts {all|1|2|14-22|4-12}
+export class PinkyPromise<T> implements PromiseLike<T> {
+  #notify() { /* TO DO add implemetation */ }
+
+  static #transition(
+    pinkyPromise: PinkyPromise<any>,
+    state: PromiseState<any>,
+  ) {
+    if (pinkyPromise.#state.status === "pending") {
+      pinkyPromise.#state = state;
+      pinkyPromise.#notify();
+    }
+  }
+
+  then<TResult1 = T, TResult2 = never>(
+    onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | null | undefined,
+    onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | null | undefined,
+  ): PinkyPromise<TResult1 | TResult2> {
+    return  new PinkyPromise<TResult1 | TResult2>((resolve, reject) => {
+      // do something then resolve
+      this.#notify();
+    });
+  }
+}
+```
+
+---
+transition: fade
+---
+
+# .then() method implementation / 2
+
+```ts {all|7|10-17|19-23}
+export class PinkyPromise<T> implements PromiseLike<T> {
+  #state: PromiseState<T> = { status: "pending" };
+  #fulfilledListeners: ((value: unknown) => unknown)[] = [];
+  #rejectedListeners: ((reason: unknown) => unknown)[] = [];
+  // Notify listeners if the Promise is settled
+  #notify() {
+    switch (this.#state.status) {
+      case "pending":
+        break;
+      case "fulfilled": {
+        this.#fulfilledListeners.forEach((cb) => queueMicrotask(() => cb(this.#state.value)));
+        break;
+      }
+      case "rejected": {
+        this.#rejectedListeners.forEach((cb) => queueMicrotask(() => cb(this.#state.reason)));
+        break;
+      }
+    }
+    // remove listeners at the end if the Promise is not settled
+    if (this.#state.status !== "pending") {
+      this.#fulfilledListeners.splice(0, this.#fulfilledListeners.length);
+      this.#rejectedListeners.splice(0, this.#rejectedListeners.length);
+    }
+  }
+}
+```
